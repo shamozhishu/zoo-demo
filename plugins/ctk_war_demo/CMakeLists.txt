@@ -4,7 +4,7 @@
 #                                                                         #
 ###########################################################################
 project(ctk_war_demo)
-
+set(OUT_NAME ctk_war_demo)
 SET(CMAKE_DEBUG_POSTFIX "")
 set(PLUGIN_export_directive "ctk_war_demo_EXPORT")
 
@@ -57,18 +57,15 @@ set(PLUGIN_SRCS
 
 # Files which should be processed by Qts moc
 set(PLUGIN_MOC_SRCS
-	#VisualDemo.h
 	DemoActivator.h
 )
 
 # Qt Designer files which should be processed by Qts uic
 set(PLUGIN_UI_FORMS
-	#VisualDemo.ui
 )
 
 # QRC Files which should be compiled into the plugin
 set(PLUGIN_RESOURCES
-	#ctk_war_demo.qrc
 )
 
 #Compute the plugin dependencies
@@ -79,8 +76,6 @@ ctkMacroBuildPlugin(
 	EXPORT_DIRECTIVE ${PLUGIN_export_directive}
 	SRCS ${PLUGIN_SRCS}
 	MOC_SRCS ${PLUGIN_MOC_SRCS}
-	#UI_FORMS ${PLUGIN_UI_FORMS}
-	#RESOURCES ${PLUGIN_RESOURCES}
 	TARGET_LIBRARIES ${PLUGIN_target_libraries}
 	${Qt5Core_LIBRARIES}
 	${Qt5Xml_LIBRARIES}

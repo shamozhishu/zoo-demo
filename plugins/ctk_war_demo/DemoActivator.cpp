@@ -1,6 +1,6 @@
 #include "DemoActivator.h"
 #include <QMessageBox>
-#include <ctk_service/zoocmd_ui/UIManagerService.h>
+#include <ctk_service/UIManagerService.h>
 #include <zooCmdLoader/ZooCmdLoader.h>
 #include "VisualDemo.h"
 

@@ -1,6 +1,6 @@
 #include "VisualDemo.h"
 #include "DemoActivator.h"
-#include <ctk_service/war/WarService.h>
+#include <ctk_service/WarService.h>
 
 VisualDemo::VisualDemo()
 {
@@ -8,7 +8,7 @@ VisualDemo::VisualDemo()
 	if (pWarService)
 	{
 		pWarService->openScene(4);
-		DemoActivator::sendWarCmd("home(view4)");
+		DemoActivator::sendWarCmd("home(1)");
 		DemoActivator::sendWarCmd("earth.fly(90, 30, 20000)");
 	}
 }

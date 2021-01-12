@@ -1,12 +1,12 @@
-#ifndef __DEMO_ACTIVATOR_H__
-#define __DEMO_ACTIVATOR_H__
+#ifndef __UI_ACTIVATOR_H__
+#define __UI_ACTIVATOR_H__
 
 #include <zoo/Log.h>
 #include <zoo/Utils.h>
 #include <QStyledItemDelegate>
 #include <ctkPluginActivator.h>
 
-class VisualDemo;
+class MainWindow;
 class NoFocusDelegate : public QStyledItemDelegate
 {
 public:
@@ -19,13 +19,13 @@ public:
 	}
 };
 
-class DemoActivator : public QObject, public ctkPluginActivator
+class UIActivator : public QObject, public ctkPluginActivator
 {
 	Q_OBJECT
 	Q_INTERFACES(ctkPluginActivator)
-	Q_PLUGIN_METADATA(IID "ctk_war_demo")
+	Q_PLUGIN_METADATA(IID "ctk_flight_control_ui")
 public:
-	DemoActivator();
+	UIActivator();
 	void start(ctkPluginContext* context);
 	void stop(ctkPluginContext* context);
 	template<typename T>
@@ -40,10 +40,11 @@ public:
 	}
 
 	static void sendWarCmd(QString cmdline);
+	static ctkPluginContext* getPluginContext();
 
 private:
-	VisualDemo* _visualDemo;
+	MainWindow* _mainUI;
 	static ctkPluginContext* _pluginContext;
 };
 
-#endif // __DEMO_ACTIVATOR_H__
+#endif // __UI_ACTIVATOR_H__
