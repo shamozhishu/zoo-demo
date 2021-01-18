@@ -42,7 +42,6 @@ private:
 	QPoint _currentPosition;
 	FlightViewPanel* _viewPanel;
 	LogRecordWgt* _logs[LOG_COUNT_];
-	StatusCheckPanel* _statusCheckPanel;
 };
 
 #endif // __MAINWINDOW_H__

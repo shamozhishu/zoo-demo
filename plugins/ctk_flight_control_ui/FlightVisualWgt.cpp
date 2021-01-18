@@ -100,7 +100,7 @@ FlightVisualWgt::FlightVisualWgt(QString renderAdaName, QStringList cmdset, QStr
 	zooCmd_Destroy();
 	if (zooCmd_InitW(renderAdaName.toStdString().c_str(), datadir.toStdWString().c_str()))
 	{
-		QWidget* pGLWgt = (QWidget*)zooCmd_Setup(width(), height(), screen->devicePixelRatio(), ZOOCMDWGT);
+		QWidget* pGLWgt = (QWidget*)zooCmd_Setup(width(), height(), screen->devicePixelRatio(), 0);
 		if (pGLWgt)
 		{
 			setLayout(new QHBoxLayout);
@@ -128,16 +128,6 @@ FlightVisualWgt::~FlightVisualWgt()
 
 	delete _cmdRegThread;
 	delete _renderThread;
-}
-
-HWND FlightVisualWgt::getWnd()
-{
-	return (HWND)winId();
-}
-
-bool FlightVisualWgt::isFocus()
-{
-	return isActiveWindow();
 }
 
 void FlightVisualWgt::resgisterCmdset(QStringList cmdset)

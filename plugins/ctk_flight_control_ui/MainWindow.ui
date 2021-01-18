@@ -12,8 +12,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>600</width>
-    <height>400</height>
+    <width>1260</width>
+    <height>800</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -573,7 +573,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>300</width>
+              <width>400</width>
               <height>0</height>
              </size>
             </property>
@@ -629,7 +629,7 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>930</width>
+           <width>539</width>
            <height>815</height>
           </rect>
          </property>
@@ -707,6 +707,15 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>462</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
         <property name="widgetResizable">
          <bool>true</bool>
         </property>
@@ -715,11 +724,17 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>69</width>
+           <width>460</width>
            <height>815</height>
           </rect>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_right">
+         <property name="minimumSize">
+          <size>
+           <width>460</width>
+           <height>0</height>
+          </size>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
           <property name="spacing">
            <number>0</number>
           </property>
@@ -737,11 +752,11 @@
           </property>
           <item>
            <widget class="QFrame" name="frame_3">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+            <property name="minimumSize">
+             <size>
+              <width>460</width>
+              <height>0</height>
+             </size>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -749,6 +764,335 @@
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
+            <layout class="QGridLayout" name="gridLayout_5">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <item row="0" column="0">
+              <layout class="QVBoxLayout" name="verticalLayout_right">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QStackedWidget" name="stackedWidget">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <widget class="SystemConfigPanel" name="page_sys_set"/>
+                 <widget class="GroundCheckPanel" name="page_ground_check"/>
+                 <widget class="LinkMonitorPanel" name="page_link_monitor"/>
+                 <widget class="MainViewPanel" name="page_main_view"/>
+                 <widget class="ServoElectricPanel" name="page_servo_electric"/>
+                 <widget class="NavAttitudePanel" name="page_nav_attitude"/>
+                 <widget class="FlyingControlPanel" name="page_flying_control"/>
+                 <widget class="RouteCmdPanel" name="page_route_cmd"/>
+                 <widget class="ParamCmdPanel" name="page_param_cmd"/>
+                 <widget class="DeviceStatePanel" name="page_device_state"/>
+                 <widget class="EngineSystemPanel" name="page_engine_sys"/>
+                 <widget class="DeviceMarkPanel" name="page_device_mark"/>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="0" column="1">
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>9</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <spacer name="verticalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_sys_set">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>系统
+设置</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_ground_check">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>地面
+检查</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_link_monitor">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>链路
+监控</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_main_view">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>
+主视图
+</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_servo_electric">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>伺服
+电气</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_nav_attitude">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>导航
+姿态</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_flying_control">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>飞行
+控制</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_route_cmd">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>航线
+指令</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_param_cmd">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>参数
+指令</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_device_state">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>设备
+状态</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_engine_sys">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>发动机
+系统</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButton_device_mark">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>60</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>设备
+标定</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                 <attribute name="buttonGroup">
+                  <string notr="true">buttonGroup</string>
+                 </attribute>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
@@ -761,8 +1105,85 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GroundCheckPanel</class>
+   <extends>QWidget</extends>
+   <header>GroundCheckPanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FlyingControlPanel</class>
+   <extends>QWidget</extends>
+   <header>FlyingControlPanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SystemConfigPanel</class>
+   <extends>QWidget</extends>
+   <header>SystemConfigPanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>LinkMonitorPanel</class>
+   <extends>QWidget</extends>
+   <header>LinkMonitorPanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MainViewPanel</class>
+   <extends>QWidget</extends>
+   <header>MainViewPanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ServoElectricPanel</class>
+   <extends>QWidget</extends>
+   <header>ServoElectricPanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NavAttitudePanel</class>
+   <extends>QWidget</extends>
+   <header>NavAttitudePanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RouteCmdPanel</class>
+   <extends>QWidget</extends>
+   <header>RouteCmdPanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ParamCmdPanel</class>
+   <extends>QWidget</extends>
+   <header>ParamCmdPanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DeviceStatePanel</class>
+   <extends>QWidget</extends>
+   <header>DeviceStatePanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>EngineSystemPanel</class>
+   <extends>QWidget</extends>
+   <header>EngineSystemPanel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DeviceMarkPanel</class>
+   <extends>QWidget</extends>
+   <header>DeviceMarkPanel.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="MainWindow.qrc"/>
  </resources>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>

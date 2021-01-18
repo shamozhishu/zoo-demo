@@ -17,7 +17,7 @@ QWidget:window {
 QToolTip {
     background-color: #000000;
     border: 2px solid #333333;
-    color: yellow;
+    color: orange;
 }
 
 /* === QPushButton === */
@@ -36,7 +36,7 @@ QPushButton:hover {
 QPushButton:pressed {
     background-color: #111111;
     border-color: #333333;
-    color: yellow;
+    color: orange;
 }
 
 QPushButton:disabled {
@@ -95,7 +95,7 @@ QGroupBox {
 }
 
 QGroupBox::title {
-    color: yellow;
+    color: orange;
     subcontrol-origin: margin;
     subcontrol-position: top left;
     margin-left: 5px;
@@ -128,9 +128,9 @@ QTabBar::tab:hover {
 QTabBar::tab:selected {
     background-color: #111111;
     border: 1px solid #333333;
-    border-top: 1px solid yellow;
+    border-top: 1px solid orange;
     border-bottom: none;
-    color: yellow
+    color: orange
 }
 
 /* === QToolBar === */
@@ -142,7 +142,7 @@ QToolBar {
 
 QToolBar:handle {
     background: #222222;
-    border-left: 1px dotted yellow;
+    border-left: 1px dotted orange;
     color: #BBBBBB;
 }
 
@@ -180,7 +180,7 @@ QToolButton::menu-button:hover {
 
 QToolButton:checked, QToolButton:pressed {
     background-color: #111111;
-    color: yellow;
+    color: orange;
 }
 
 /* === QMenu === */
@@ -347,17 +347,33 @@ QListView::item:hover {
 
 QListView::item:selected {
     background: #111111;
-    color: yellow;
+    color: orange;
 }
 
 /* === QTableView === */
-QTableView::item:hover {
+QTableView::item {
     background: #333333;
 }
 
-QTableView::item:selected {
+QTableView::item:hover {
     background: #111111;
-    color: yellow;
+    color: orange;
+}
+
+QTableView::item:selected {
+    color: orange;
+    background: rgba(128, 128, 128, 40);
+}
+
+QTableView::item:selected:!active {
+    color: orange;
+}
+
+QTableView QTableCornerButton::section {
+    background: #222222;
+    border: 0;
+    color: #BBBBBB;
+    padding: 3px 0 3px 4px;
 }
 
 /* === QTreeView === */
@@ -371,7 +387,7 @@ QTreeView::item:hover {
 
 QTreeView::item:selected {
     background: #111111;
-    color: yellow;
+    color: orange;
 }
 
 QTreeView::branch {
@@ -466,19 +482,18 @@ QLineEdit[echoMode="2"] {
 }
 
 QHeaderView::section {
-     background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                                       stop:0 #616161, stop: 0.5 #505050,
-                                       stop: 0.6 #434343, stop:1 #656565);
-     color: white;
-     padding-left: 4px;
-     border: 1px solid #6c6c6c;
- }
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #616161, stop: 0.5 #505050,
+                                      stop: 0.6 #434343, stop:1 #656565);
+    color: white;
+    padding-left: 4px;
+    border: 1px solid #6c6c6c;
+}
 
- QHeaderView::section:checked
- {
-     background-color: red;
- }
-
+QHeaderView::section:checked
+{
+    background-color: red;
+}
 
 /* We provide a min-width and min-height for push buttons
    so that they look elegant regardless of the width of the text. */
@@ -883,13 +898,22 @@ QListView::item:selected {
 }
 
 /* === QTableView === */
-QTableView::item:hover {
+QTableView::item {
     background: #333333;
 }
 
-QTableView::item:selected {
+QTableView::item:hover {
     background: #111111;
-    color: yellow;
+    color: orange;
+}
+
+QTableView::item:selected {
+    color: orange;
+    background: rgba(128, 128, 128, 40);
+}
+
+QTableView::item:selected:!active {
+    color: orange;
 }
 
 /* === QTreeView === */

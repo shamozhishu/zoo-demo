@@ -1,5 +1,6 @@
 #include "UIActivator.h"
 #include <QMessageBox>
+#include <QApplication>
 #include <zooCmdLoader/ZooCmdLoader.h>
 #include "MainWindow.h"
 
@@ -17,6 +18,15 @@ UIActivator::UIActivator()
 void UIActivator::start(ctkPluginContext* context)
 {
 	_pluginContext = context;
+
+	QFile file(":/qss/Resources/qss/black.qss");
+	if (file.open(QFile::ReadOnly))
+	{
+		QString styleSheet = QLatin1String(file.readAll());
+		qApp->setStyleSheet(styleSheet);
+		file.close();
+	}
+
 	_mainUI = new MainWindow;
 	_mainUI->show();
 }

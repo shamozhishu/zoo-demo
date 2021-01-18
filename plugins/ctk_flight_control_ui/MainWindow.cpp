@@ -5,7 +5,7 @@
 #include <QMouseEvent>
 #include "ui_MainWindow.h"
 #include "LogRecordWgt.h"
-#include "StatusCheckPanel.h"
+#include "GroundCheckPanel.h"
 #include "FlightParamPanel.h"
 #include "FlightViewPanel.h"
 #include "FlightVisualWgt.h"
@@ -57,6 +57,14 @@ MainWindow::MainWindow(QWidget *parent)
 		QMessageBox::information(this, "关于", "飞行控制管理软件 V1.0");
 	});
 
+	connect(_ui->buttonGroup, static_cast<void(QButtonGroup::*)(int, bool)>(&QButtonGroup::buttonToggled), [this](int btnIdx, bool isChecked)
+	{
+		if (isChecked)
+		{
+			_ui->stackedWidget->setCurrentIndex(abs(btnIdx) - 2);
+		}
+	});
+
 	_ui->label_datetime->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
 	QTimer* pTimer = new QTimer(this);
 	pTimer->start(20);
@@ -64,9 +72,6 @@ MainWindow::MainWindow(QWidget *parent)
 	{
 		_ui->label_datetime->setText(QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss dddd"));
 	});
-
-	_statusCheckPanel = new StatusCheckPanel;
-	_ui->verticalLayout_right->addWidget(_statusCheckPanel);
 
 	_viewPanel = new FlightViewPanel(this);
 	_ui->verticalLayout_center->addWidget(_viewPanel);

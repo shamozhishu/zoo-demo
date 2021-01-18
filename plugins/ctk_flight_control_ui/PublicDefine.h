@@ -9,7 +9,7 @@ class WidgetASI;
 class WidgetNAV;
 class LogRecordWgt;
 class FlightViewPanel;
-class StatusCheckPanel;
+class GroundCheckPanel;
 
 enum ELogType
 {

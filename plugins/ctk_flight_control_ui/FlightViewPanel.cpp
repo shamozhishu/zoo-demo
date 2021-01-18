@@ -25,7 +25,6 @@ FlightViewPanel::FlightViewPanel(QMainWindow* mainWindow, QWidget* parent)
 	QStringList cmdset = settings.value("activecmd").toStringList();
 	settings.endGroup();
 	_visualWgt = new FlightVisualWgt("zooCmd_osg", cmdset, datadir, this);
-	UIActivator::getPluginContext()->registerService<Win32Service>(_visualWgt);
 	_ui->verticalLayout->insertWidget(0, _visualWgt);
 }
 

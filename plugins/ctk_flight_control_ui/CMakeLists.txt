@@ -17,6 +17,24 @@ IF(QT_INCLUDES)
 	include_directories(${QT_INCLUDES})
 ENDIF()
 
+SET(QWT_INCLUDE_DIR "" CACHE PATH "Set to Qwt include path")
+SET(QWT_LIBRARY "" CACHE FILEPATH "Set to Qwt release lib file")
+SET(QWT_LIBRARY_DEBUG "" CACHE FILEPATH "Set to Qwt debug lib file")
+
+if (QWT_INCLUDE_DIR)
+	include_directories(${QWT_INCLUDE_DIR})
+else()
+	message(FATAL_ERROR "QWT_INCLUDE_DIR need to set!!!")
+endif()
+
+if (NOT QWT_LIBRARY)
+	message(FATAL_ERROR "QWT_LIBRARY need to set!!!")
+endif()
+	
+if (NOT QWT_LIBRARY_DEBUG)
+	message(FATAL_ERROR "QWT_LIBRARY_DEBUG need to set!!!")
+endif()
+
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/qfi ${CMAKE_CURRENT_SOURCE_DIR}/qfi_widget)
 ADD_DEFINITIONS(-D_USE_MATH_DEFINES)
 
@@ -73,10 +91,21 @@ set(PLUGIN_MOC_SRCS
 	MainWindow.h
 	LogRecordWgt.h
 	FlightVisualWgt.h
-	StatusCheckPanel.h
 	FlightParamPanel.h
 	FlightViewPanel.h
 	FullScreenPanel.h
+	SystemConfigPanel.h
+	GroundCheckPanel.h
+	LinkMonitorPanel.h
+	MainViewPanel.h
+	ServoElectricPanel.h
+	NavAttitudePanel.h
+	FlyingControlPanel.h
+	RouteCmdPanel.h
+	ParamCmdPanel.h
+	DeviceStatePanel.h
+	EngineSystemPanel.h
+	DeviceMarkPanel.h
 	${MOC_HEADERS}
 )
 
@@ -109,6 +138,7 @@ ctkMacroBuildPlugin(
 	${Qt5Svg_LIBRARIES}
 	debug zood optimized zoo
 	debug zooCmdLoaderd optimized zooCmdLoader
+	debug ${QWT_LIBRARY_DEBUG} optimized ${QWT_LIBRARY}
 )
 
 IF (WIN32)
