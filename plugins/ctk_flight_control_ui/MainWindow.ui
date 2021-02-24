@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>飞行控制管理软件</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="MainWindow.qrc">
+    <normaloff>:/images/Resources/app.ico</normaloff>:/images/Resources/app.ico</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">

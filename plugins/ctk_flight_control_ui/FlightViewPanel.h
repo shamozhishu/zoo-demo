@@ -8,6 +8,7 @@ namespace Ui {
 	class FlightViewPanel;
 }
 
+class QHBoxLayout;
 class FlightVisualWgt;
 class FullScreenPanel;
 class FlightViewPanel : public QWidget
@@ -21,6 +22,7 @@ public:
 
 private:
 	Ui::FlightViewPanel* _ui;
+	QHBoxLayout* _hboxLayout;
 	QMainWindow* _mainWindow;
 	FlightVisualWgt* _visualWgt;
 	FullScreenPanel* _fullScreenPanel;

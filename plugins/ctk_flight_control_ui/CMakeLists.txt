@@ -83,6 +83,7 @@ set(PLUGIN_SRCS
 	${BS_HEADERS}
 	${BS_SOURCES}
 	${MOC_HEADERS}
+	Resource.rc
 )
 
 # Files which should be processed by Qts moc
@@ -106,6 +107,7 @@ set(PLUGIN_MOC_SRCS
 	DeviceStatePanel.h
 	EngineSystemPanel.h
 	DeviceMarkPanel.h
+	flightattitudegraphicsview.h
 	${MOC_HEADERS}
 )
 

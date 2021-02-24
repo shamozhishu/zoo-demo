@@ -3,6 +3,7 @@
         <file>Resources/images/error.png</file>
         <file>Resources/images/normal.png</file>
         <file>Resources/images/warning.png</file>
+        <file>Resources/app.ico</file>
     </qresource>
     <qresource prefix="/qss">
         <file>Resources/qss/black.qss</file>

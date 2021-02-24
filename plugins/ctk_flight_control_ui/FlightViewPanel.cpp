@@ -6,6 +6,7 @@
 #include "UIActivator.h"
 #include <QSettings>
 #include <ctk_service/WarService.h>
+#include "flightattitudegraphicsview.h"
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 #pragma execution_character_set("utf-8")
@@ -24,8 +25,13 @@ FlightViewPanel::FlightViewPanel(QMainWindow* mainWindow, QWidget* parent)
 	QString datadir = settings.value("datadir").toString();
 	QStringList cmdset = settings.value("activecmd").toStringList();
 	settings.endGroup();
+
+	_hboxLayout = new QHBoxLayout;
 	_visualWgt = new FlightVisualWgt("zooCmd_osg", cmdset, datadir, this);
-	_ui->verticalLayout->insertWidget(0, _visualWgt);
+	_hboxLayout->addWidget(_visualWgt);
+	QWidget* fagView = new flightAttitudeGraphicsView(this);
+	_hboxLayout->addWidget(fagView);
+	_ui->verticalLayout->addLayout(_hboxLayout);
 }
 
 FlightViewPanel::~FlightViewPanel()
@@ -42,8 +48,7 @@ void FlightViewPanel::enterFullScreen()
 	{
 		_fullScreenPanel = new FullScreenPanel;
 		connect(_fullScreenPanel, SIGNAL(quitFullScreen()), _mainWindow, SLOT(onExitFullScreen()));
-		_visualWgt->setParent(_fullScreenPanel->_ui->frame);
-		_fullScreenPanel->_ui->verticalLayout_view->addWidget(_visualWgt);
+		_fullScreenPanel->_ui->verticalLayout_view->addLayout(_hboxLayout);
 		_fullScreenPanel->showMaximized();
 		((QWidget*)parent())->setVisible(false);
 	}
@@ -53,8 +58,7 @@ void FlightViewPanel::exitFullScreen()
 {
 	if (_fullScreenPanel)
 	{
-		_visualWgt->setParent(this);
-		_ui->verticalLayout->insertWidget(0, _visualWgt);
+		_ui->verticalLayout->addLayout(_hboxLayout);
 		_fullScreenPanel->deleteLater();
 		_fullScreenPanel = nullptr;
 		((QWidget*)parent())->setVisible(true);
